@@ -1,0 +1,9 @@
+﻿@model App.ViewModels.Carts.UpdateCartItem
+
+    <form asp-action="Update" method="post" class="form-inline">
+        @Html.Hidden("CartItemId", Model.CartItemId)
+        <div class="form-group">
+            <input class="form-control" asp-for="Quantity" style="max-width:100px;" value="@Model.Quantity"/>
+        </div>
+        <button class="btn btn-primary" type="submit">Update</button>
+    </form>

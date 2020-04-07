@@ -1,0 +1,36 @@
+﻿@model EditProductViewModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="display-4 mb-3">Edit @Model.Name</h1>
+<div class="container-fluid mx-3">
+    <form asp-controller="Product" asp-action="Edit" method="post">
+        <input hidden asp-for="Id" />
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" />
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description"></label>
+            <input asp-for="Description" />
+            <span asp-validation-for="Description"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Price"></label>
+            <input asp-for="Price" />
+            <span asp-validation-for="Price"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Barcode"></label>
+            <input asp-for="Barcode" />
+            <span asp-validation-for="Barcode"></span>
+        </div>
+        <div class="form-group">
+            <select class="form-control" asp-for="CategoryId" asp-items="ViewBag.CategoriesOptions"></select>
+        </div>
+        <button class="btn btn-primary" type="submit">Edit</button>
+        <a class="btn btn-primary" asp-controller="Product" asp-action="Details" asp-route-id="@Model.Id">Discard</a>
+    </form>
+</div>

@@ -1,0 +1,38 @@
+﻿@model CreateProductViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="display-4 mb-3">Create new product</h1>
+<div class="container-fluid mb-3">
+    <form asp-controller="Product" asp-action="Create" method="post">
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input class="form-control" asp-for="Name" />
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description"></label>
+            <input class="form-control" asp-for="Description" />
+            <span asp-validation-for="Description"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Price"></label>
+            <input class="form-control" asp-for="Price" value="" />
+            <span asp-validation-for="Price"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Barcode"></label>
+            <input class="form-control" asp-for="Barcode" />
+            <span asp-validation-for="Barcode"></span>
+        </div>
+        <div class="form-group">
+            <select class="form-control" asp-for="CategoryId" asp-items="ViewBag.CategoriesOptions"></select>
+        </div>
+        <button class="btn btn-primary" type="submit">Create</button>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

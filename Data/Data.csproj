@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200220180210_initial.cs" />
+    <Compile Remove="Migrations\20200220180210_initial.Designer.cs" />
+    <Compile Remove="Migrations\20200221123859_changes.cs" />
+    <Compile Remove="Migrations\20200221123859_changes.Designer.cs" />
+    <Compile Remove="Migrations\20200221124619_new.cs" />
+    <Compile Remove="Migrations\20200221124619_new.Designer.cs" />
+    <Compile Remove="Migrations\20200221125710_initial.cs" />
+    <Compile Remove="Migrations\20200221125710_initial.Designer.cs" />
+    <Compile Remove="Migrations\20200223094908_poTable.cs" />
+    <Compile Remove="Migrations\20200223094908_poTable.Designer.cs" />
+    <Compile Remove="Migrations\20200223153140_cartItem.cs" />
+    <Compile Remove="Migrations\20200223153140_cartItem.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Repositories\itlloucl.uvh~" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj" />
+  </ItemGroup>
+
+</Project>

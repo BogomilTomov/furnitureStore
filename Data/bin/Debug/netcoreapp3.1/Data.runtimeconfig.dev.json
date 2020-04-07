@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\bogomil.tomov\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\bogomil.tomov\\.nuget\\packages"
+    ]
+  }
+}

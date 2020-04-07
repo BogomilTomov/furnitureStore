@@ -1,0 +1,39 @@
+﻿@model App.ViewModels.Carts.UserCartViewModel
+@if (Model.CartItems.Count > 0)
+{
+    <a asp-controller="Product" asp-action="Index" class="btn btn-primary">Continue shopping</a>
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Quantity</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cartItem in Model.CartItems)
+            {
+            <tr>
+                <td>@cartItem.ProductName</td>
+                <td>@cartItem.ProductPrice</td>
+                @*<td>@cartItem.Quantity</td>*@
+                <td>
+                    @Html.Partial("_UpdateCartItem", new App.ViewModels.Carts.UpdateCartItem() { CartItemId = cartItem.Id, Quantity = cartItem.Quantity})
+                </td>
+                <td>
+                    @Html.Partial("_RemoveFromCart", new App.ViewModels.Carts.RemoveFromCartViewModel() { CartItemId = cartItem.Id })
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <form asp-action="PlaceOrder" method="post">
+        <button type="submit" class="btn btn-primary">Place Order</button>
+    </form>
+}
+else
+{
+    <p>Your shopping cart is empty.</p>
+    <a asp-controller="Product" asp-action="Index" class="btn btn-primary mt-3">To shop</a>
+}

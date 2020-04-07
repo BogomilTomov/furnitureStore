@@ -1,0 +1,41 @@
+﻿@model CategoryDetailsViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="display-4 mb-3">@Model.Name</h1>
+
+<div class="container-fluid">
+    @if (User.IsInRole("Admin"))
+    {
+        <a class="btn btn-primary" asp-controller="Category" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+        <form class="d-inline" method="post" asp-controller="Category" asp-action="Delete" asp-route-id="@Model.Id">
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+        <a class="btn btn-primary" asp-controller="Product" asp-action="Create">Add product</a>
+    }
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Barcode</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model.Products)
+            {
+                <tr>
+                    <td>@product.Name</td>
+                    <td>@product.Description</td>
+                    <td>@product.Price</td>
+                    <td>@product.Barcode</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+

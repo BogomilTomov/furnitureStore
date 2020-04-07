@@ -1,0 +1,36 @@
+﻿@model ProductDetailsViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="display-4 mb-3">@Model.Name</h1>
+
+<div class="container-fluid">
+    @if (User.IsInRole("Admin"))
+    {
+        <a class="btn btn-primary" asp-controller="Product" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+        <form class="d-inline" method="post" asp-controller="Product" asp-action="Delete" asp-route-id="@Model.Id">
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+    }
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Barcode</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Name</td>
+                <td>@Model.Description</td>
+                <td>@Model.Price</td>
+                <td>@Model.Barcode</td>
+                <td>@Model.Category</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

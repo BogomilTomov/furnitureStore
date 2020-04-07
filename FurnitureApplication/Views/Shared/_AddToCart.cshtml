@@ -1,0 +1,10 @@
+﻿@model App.ViewModels.Carts.AddToCartViewModel
+
+<form asp-controller="Cart" asp-action="AddToCart" method="post" class="form-inline">
+
+    @Html.Hidden("ProductId", Model.ProductId)
+    <div class="form-group">
+        <input class="form-control" asp-for="Quantity"  style="max-width:100px;"/>
+    </div>
+    <button class="btn btn-primary" type="submit">Add to cart</button>
+</form>

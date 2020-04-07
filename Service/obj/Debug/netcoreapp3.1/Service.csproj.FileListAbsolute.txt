@@ -1,0 +1,13 @@
+C:\Users\bogomil.tomov\source\repos\FurnitureApplication\Service\bin\Debug\netcoreapp3.1\Service.deps.json
+C:\Users\bogomil.tomov\source\repos\FurnitureApplication\Service\bin\Debug\netcoreapp3.1\Service.dll
+C:\Users\bogomil.tomov\source\repos\FurnitureApplication\Service\bin\Debug\netcoreapp3.1\Service.pdb
+C:\Users\bogomil.tomov\source\repos\FurnitureApplication\Service\bin\Debug\netcoreapp3.1\Data.dll
+C:\Users\bogomil.tomov\source\repos\FurnitureApplication\Service\bin\Debug\netcoreapp3.1\Models.dll
+C:\Users\bogomil.tomov\source\repos\FurnitureApplication\Service\bin\Debug\netcoreapp3.1\Data.pdb
+C:\Users\bogomil.tomov\source\repos\FurnitureApplication\Service\bin\Debug\netcoreapp3.1\Models.pdb
+C:\Users\bogomil.tomov\source\repos\FurnitureApplication\Service\obj\Debug\netcoreapp3.1\Service.csprojAssemblyReference.cache
+C:\Users\bogomil.tomov\source\repos\FurnitureApplication\Service\obj\Debug\netcoreapp3.1\Service.AssemblyInfoInputs.cache
+C:\Users\bogomil.tomov\source\repos\FurnitureApplication\Service\obj\Debug\netcoreapp3.1\Service.AssemblyInfo.cs
+C:\Users\bogomil.tomov\source\repos\FurnitureApplication\Service\obj\Debug\netcoreapp3.1\Service.csproj.CopyComplete
+C:\Users\bogomil.tomov\source\repos\FurnitureApplication\Service\obj\Debug\netcoreapp3.1\Service.dll
+C:\Users\bogomil.tomov\source\repos\FurnitureApplication\Service\obj\Debug\netcoreapp3.1\Service.pdb

@@ -1,0 +1,42 @@
+﻿@model List<ProductDetailsViewModel>
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h1 class="display-4 mb-3">Products</h1>
+
+<div class="container-fluid mx-3">
+    @if (User.IsInRole("Admin"))
+    {
+        <a class="btn btn-primary" asp-controller="Product" asp-action="Create">Create new product</a>
+    }
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Barcode</th>
+                <th>Category</th>
+                <th>Details</th>
+                <th>Buy</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Description</td>
+                <td>@product.Price</td>
+                <td>@product.Barcode</td>
+                <td>@product.Category</td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">Details</a>
+                </td>
+                <td>@Html.Partial("_AddToCart", new App.ViewModels.Carts.AddToCartViewModel() { ProductId = product.Id})</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

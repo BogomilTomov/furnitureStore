@@ -1,0 +1,30 @@
+﻿@model List<CategoryViewModel>
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<h1 class="display-4 mb-3">Categories</h1>
+<div class="container-fluid mx-3">
+    @if (User.IsInRole("Admin"))
+    {
+        <a class="btn btn-primary" asp-controller="Category" asp-action="Create">Create new category</a>
+    }
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var category in Model)
+            {
+                <tr>
+                    <td>@category.Name</td>
+                    <td>
+                        <a class="btn btn-primary" asp-controller="Category" asp-action="Details" asp-route-id="@category.Id">Details</a>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
